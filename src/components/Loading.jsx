@@ -12,9 +12,9 @@ const Loading = () => {
           clearInterval(interval);
           return 100;
         }
-        return prev + 1;
+        return prev + 4; // Increased increment to complete in ~1 second
       });
-    }, 30); // Updates every 30ms to complete in ~3 seconds
+    }, 40); // Updates faster to complete in 1 second
 
     return () => clearInterval(interval);
   }, []);
@@ -27,7 +27,7 @@ const Loading = () => {
           rotate: [0, 360],
         }}
         transition={{
-          duration: 1.5,  // Faster rotation for 3-second loading
+          duration: 1,  // Faster rotation for 1-second loading
           repeat: Infinity,
           ease: "easeInOut",
         }}
