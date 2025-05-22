@@ -1,14 +1,28 @@
 import { BrowserRouter } from "react-router-dom";
-
-import { About, Contact, Experience, Education, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import { Suspense, useState, useEffect } from "react";
+import { About, Contact, Experience, Education, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Loading } from "./components";
 import CodingProfiles from "./components/CodingProfiles";
 import { testimonials } from "./constants";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Show loading screen for 3 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
-        <StarsCanvas />
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
@@ -22,6 +36,7 @@ const App = () => {
         {testimonials.length > 0 && <Feedbacks />}
         <div className='relative z-0'>
           <Contact />
+          <StarsCanvas />
         </div>
       </div>
     </BrowserRouter>
