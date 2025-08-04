@@ -8,23 +8,17 @@ import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 
 const Tech = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
+    // Check if screen width is larger than 1024px (laptop/desktop)
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth > 1024);
     };
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-    // Remove the listener when the component is unmounted
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
+
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
   }, []);
 
   return (
@@ -41,8 +35,11 @@ const Tech = () => {
               className='w-28 h-28 flex flex-col items-center justify-center' 
               key={technology.name}
             >
-              {isMobile ? (
-                // Static version for mobile
+              {isDesktop ? (
+                // 3D version for desktop/laptop
+                <BallCanvas icon={technology.icon} />
+              ) : (
+                // Static version for all other devices
                 <div className="w-20 h-20 rounded-full bg-tertiary flex items-center justify-center border-2 border-accent hover:border-white transition-colors duration-300">
                   <img
                     src={technology.icon}
@@ -50,9 +47,6 @@ const Tech = () => {
                     className="w-12 h-12 object-contain"
                   />
                 </div>
-              ) : (
-                // 3D version for desktop
-                <BallCanvas icon={technology.icon} />
               )}
               <p className="text-center mt-2 text-white-100">{technology.name}</p>
             </div>

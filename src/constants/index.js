@@ -147,20 +147,20 @@ const languages = [
   },
 ];
 
-const experiences = [
-  {
-    title: "Blockchain Researcher & Developer Intern",
-    company_name: "Diigoo LLP",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "May 2025 - Present",
-    points: [
-      "Conducting research on blockchain protocols, smart contracts, and decentralized technologies for innovative projects.",
-      "Assisting in the development and optimization of blockchain-based solutions and applications for Diigoo.",
-      "Collaborating with the development team to implement blockchain features and Web3 technologies.",
-      "Staying updated with the latest advancements in blockchain technology and applying them to ongoing projects.",
-    ],
-  },
+// const experiences = [
+//   {
+//     title: "Blockchain Researcher & Developer Intern",
+//     company_name: "Diigoo LLP",
+//     icon: starbucks,
+//     iconBg: "#383E56",
+//     date: "May 2025 - Present",
+//     points: [
+//       "Conducting research on blockchain protocols, smart contracts, and decentralized technologies for innovative projects.",
+//       "Assisting in the development and optimization of blockchain-based solutions and applications for Diigoo.",
+//       "Collaborating with the development team to implement blockchain features and Web3 technologies.",
+//       "Staying updated with the latest advancements in blockchain technology and applying them to ongoing projects.",
+//     ],
+//   },
   /* 
   {
     title: "React Native Developer",
@@ -202,7 +202,7 @@ const experiences = [
     ],
   },
   */
-];
+// ];
 
 const education = [
   {
@@ -310,4 +310,4 @@ const projects = [
 
 ];
 
-export { services, technologies, languages, experiences, education, testimonials, projects };
+export { services, technologies, languages, /* experiences, */ education, testimonials, projects };

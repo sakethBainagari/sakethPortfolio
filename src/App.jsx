@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { Suspense, useState, useEffect } from "react";
-import { About, Contact, Experience, Education, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Loading } from "./components";
+import { About, Contact, /* Experience, */ Education, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Loading } from "./components";
 import CodingProfiles from "./components/CodingProfiles";
 import { testimonials } from "./constants";
 
@@ -28,7 +28,7 @@ const App = () => {
           <Hero />
         </div>
         <About />
-        <Experience />
+        {/* <Experience /> */}
         <Education />
         <Tech />
         <CodingProfiles />

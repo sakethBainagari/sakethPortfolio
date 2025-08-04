@@ -52,13 +52,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        Aspiring Software Engineer with hands-on experience building end-to-end 
-        AI-powered web and mobile apps using React, LangChain, and Python. 
-        I'm proficient in frontend technologies like React and React Native, 
-        backend frameworks including Node.js, Express.js, and Flask, and have a strong 
-        foundation in AI/ML with TensorFlow, PyTorch, and Scikit-learn. I'm a quick 
-        learner seeking a challenging role to contribute scalable and impactful 
-        solutions in AI/ML and Front End development.
+        Hi, I'm Saketh Bainagari, a Computer Science undergraduate at MLR Institute of Technology, specializing in AI & Machine Learning. I’m passionate about building intelligent, full-stack applications that create real-world impact.I’ve developed tools like an AI-powered News Research Tool using LangChain, Ollama, and Flask, and an ML-based crop prediction app called AgriPredict. My core skills include Python, Java, React, Node.js, Firebase, and NLP tools like Hugging Face and FAISS. I enjoy combining clean UI/UX with scalable backend systems to build solutions that matter.
       </motion.p>
 
       <div className='mt-20'>
